@@ -1,5 +1,7 @@
 package com.bridgelabz.coursemanagementsystem;
 
+import java.util.List;
+
 public class Course<T extends CourseType> {
     private T courseDetails;
 
@@ -15,3 +17,13 @@ public class Course<T extends CourseType> {
         courseDetails.displayCourseDetails();
     }
 }
+
+
+class CourseUtils {
+    public static void displayAllCourses(List<? extends CourseType> courses) {
+        for (CourseType course : courses) {
+            course.displayCourseDetails();
+        }
+    }
+}
+
