@@ -1,5 +1,7 @@
 package com.bridgelabz.mealplangenerator;
 
+import java.util.List;
+
 public class Meal<T extends MealPlan> {
     private T mealDetails;
 
@@ -14,5 +16,15 @@ public class Meal<T extends MealPlan> {
     public void display() {
         mealDetails.displayMeal();
     }
+};
+
+class MealPlanUtils {
+    public static <T extends MealPlan> void generateMealPlan(List<T> meals) {
+        System.out.println("Generated Personalized Meal Plan:");
+        for (T meal : meals) {
+            meal.displayMeal();
+        }
+    }
 }
+
 
